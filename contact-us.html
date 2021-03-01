@@ -1,0 +1,357 @@
+<?
+include "admin/AMframe/config.php";
+//if($cms_on != $cms_approve_st){echo "<script>location.href='$cms_approve';</script>";}
+$PSCurncy="<span class='pdr7' style='color:#333;text-transform: capitalize;}'>Rs</span>";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Property Listing">
+    <meta name="description" content="Property Listing">
+    <meta name="keywords" content="property,listing">
+	<title><? echo $sitetitle; ?></title>
+	<link rel="stylesheet" type="text/css" href="<? echo $siteurl; ?>/assets/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="<? echo $siteurl; ?>/assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="<? echo $siteurl; ?>/assets/css/stylesheet.css" />
+	<link rel="stylesheet" type="text/css" href="<? echo $siteurl; ?>/assets/css/slider.css" />
+	<link rel="stylesheet" type="text/css" href="<? echo $siteurl; ?>/assets/css/bootstrap-select.min.css" />
+	<link rel="stylesheet" href="<? echo $siteurl; ?>/assets/css/sweetalert.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,300italic,400italic,300">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <link rel="icon" href="<? echo $siteurl; ?>/index.ico">
+	<script type="text/javascript" src="<? echo $siteurl; ?>/assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="<? echo $siteurl; ?>/assets/js/bootstrap.js"></script>
+	<script src="https://js.stripe.com/v2/" type="text/javascript"></script>
+    <script src="<? echo $siteurl; ?>/assets/js/sweetalert.min.js"></script>
+	<script src="<? echo $siteurl; ?>/assets/js/jquery.validate.min.js"></script>
+	<script src="<? echo $siteurl; ?>/assets/js/image-prv.js"></script>
+	
+     <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />	-->
+     <script src="http://www.jqueryscript.net/demo/Clean-Responsive-jQuery-Carousel-Plugin-flexisel/js/jquery.flexisel.js"></script>
+     
+	 <style>
+	p, a, label, input, textarea, .form-control, body, .btn, button { font-size:14px; }
+	.profile-brdr-2 input.form-control,
+	.profile-brdr-2 select.form-control{
+		height:45px;
+	}
+</style>
+  
+    
+
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+
+
+</script>
+<script>
+$(window).load(function() {
+   
+
+    $("#flexiselDemo3").flexisel({
+        visibleItems: 3,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 3000,            
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 3
+            }
+        }
+    });
+
+   
+    
+});
+</script>
+<link rel="stylesheet" href="<? echo $siteurl; ?>/slick.css" />
+<link rel="stylesheet" href="<? echo $siteurl; ?>/slick-theme.css" />
+<script src="slick.js"> </script>
+<script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow:3,
+        slidesToScroll: 3
+      });
+     
+});
+  </script>
+<style>
+.pdr7{ padding-right:7px} 
+   
+.slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+
+.overlay {   color:#fff;  position:absolute;  z-index:12;  left:0;  width:100%;  text-align:center;}
+.carousel-indicators .active {    width: 22px;    height: 22px;    margin: 0; margin-left:15px; background-color: #5BB531;    border-color: #5BB531;}
+.carousel-indicators li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+	margin-left:15px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #FFF;
+    border: 1px solid #fff;
+    border-radius: 10px; 
+}
+
+a.add-prop
+{background: #fda744;
+color: #FFF !important;
+padding: 3px 10px;
+border-radius: 3px;}
+
+a.add-prop:hover
+{background: #fda744;
+}
+</style>
+</head>
+
+<body>
+<!-- Modal -->
+<div class="modal fade" id="contact-agent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-top: 250px;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #21728d; text-align:center;">
+        <button type="button" style="color:#FFF;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 style="color:#FFF; font-weight:bold;" class="modal-title" id="exampleModalLabel">Send Message<div id="recname"></div></h4>
+      </div>
+      <div class="modal-body">
+        <form id="cnt_form" name="cont_agent" action="<? echo $siteurl; ?>/contact" method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Name:</label>
+            <input type="text" class="form-control" name="name" required>
+          </div>
+		  <?
+		  if(!$_SESSION['usr']) {
+			echo '<div class="form-group"><label for="recipient-name" class="control-label">Email:</label>
+				  <input type="text" class="form-control" name="email" required></div>';
+		  }
+		  ?>
+		  <div class="form-group">
+            <label for="recipient-name" class="control-label">Mobile Number:</label>
+            <input type="text" class="form-control" name="mobile" maxlength="15" onkeypress="return event.charCode >= 48 && event.charCode <= 57" minlength="10" required>
+          </div>
+		   <div class="form-group">
+            <label for="message-text" class="control-label">Subject:</label>
+            <textarea style="resize:vertical;" class="form-control" name="sub" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea style="resize:vertical;" class="form-control" name="message" required></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-search" name="cont_agent" value="Send Message">
+      </div>
+	  </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header avd-serbg">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="<? echo $siteurl; ?>/assets/images/close-icon.png"></span></button>
+                    <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF;" id="myModalLabel">Login</h4>
+                  </div>
+      <div class="modal-body">
+        <form id="lform" action="<? echo $siteurl; ?>/session" method="post"> 
+		<?
+		if(isset($_REQUEST['lerror'])) { 
+				echo '<center><span class="err">Incorrect Email Address/Password!</span></center>';
+		}
+		if(isset($_REQUEST['inactive'])) { 
+				echo "<script>swal('Oops!','Your account currently is awaiting for activation! Please check your mail to activate your account.','warning');</script>";
+		}
+		if(isset($_REQUEST['lmt'])) { 
+				echo '<center><span class="err">Fill both the fields!</span></center>';
+		}
+		if(isset($_REQUEST['enq'])) { 
+			$enqval = $_REQUEST['enq'];
+		?>
+			<input type="hidden" name="enq_val" value="" />
+	<?	}
+		?>
+          <div class="form-group">
+            <label class="login-font">Email Address</label>
+            <input type="email" class="form-control" name="email"  value="<? echo @$email; ?>" required>
+          </div>
+          
+           <div class="form-group">
+            <label class="login-font">Password</label>
+            <input type="password" class="form-control" name="pass" maxlength="20" required>
+          </div>
+		  
+		  <div class="form-group text-center mt30">
+             <input type="submit" class="btn bc3 btn-login" name="login" value="Log In">
+          </div>
+		  
+          <div class="form-group">
+            <small class="pull-left">
+              <a href="#" class="login-link" data-toggle="modal" data-target="#forgetpass" data-dismiss="modal" aria-label="Close">Forgot Password?</a>
+            </small>
+            <small class="pull-right">
+              Don't Have an Account? <a href="#" class="login-link" data-toggle="modal" data-target="#register" data-dismiss="modal" aria-label="Close">Register Now</a>
+            </small>
+          </div><br>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+<div class="modal fade" id="forgetpass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header avd-serbg">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="<? echo $siteurl; ?>/assets/images/close-icon.png"></span></button>
+            <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF;" id="myModalLabel">Get Password</h4>
+            </div>
+      <div class="modal-body">
+        <form action="" method="post">
+			           <div class="form-group">
+            <label class="login-font">Email Address</label>
+            <input type="email" name="frg_mail" required class="form-control">
+          </div>
+		  
+		  <div class="form-group text-center">
+             <button style="margin-top:30px;" type="submit" name="forget" class="btn bc3 btn-login">Submit</button>
+          </div>
+		  
+          <div class="form-group text-center mt30">
+            <small class="pull-left">
+              Already have an account? <a href="#" class="login-link" data-toggle="modal" data-target="#login" data-dismiss="modal" aria-label="Close">Login Here</a>
+            </small>
+            <small class="pull-right">
+             Don't Have an Account? <a href="#" class="login-link" data-toggle="modal" data-target="#register" data-dismiss="modal" aria-label="Close">Register Now</a>
+            </small>			
+          </div><br />
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header avd-serbg">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="<? echo $siteurl; ?>/assets/images/close-icon.png"></span></button>
+                    <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF;" id="myModalLabel">Register</h4>
+                  </div>
+				 
+      <div class="modal-body">
+        <form name="sform" id="rform" action="<? echo $siteurl; ?>/signup" method="post">
+          <div class="form-group">
+            <label class="login-font">Full Name</label>
+            <input type="text" class="form-control" name="fullname"  value="<? echo @$fullname; ?>" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="login-font">Email Address 
+			<?
+			if(isset($_REQUEST['rmerr'])) { 
+				echo '&bull; <span class="err">Email address already used!</span>';
+			} 
+			?>
+			</label>
+            <input type="email" id="email" class="form-control" name="email"  value="<? echo @$email; ?>" onChange="return chkemail()" required />
+          </div>
+          
+          <div class="form-group">
+            <label class="login-font">Mobile Number</label>
+            <input type="text" class="form-control" name="mobile" maxlength="15" onkeypress="return event.charCode >= 48 && event.charCode <= 57" value="<? @$mobile; ?>" required>
+          </div>
+          
+           <div class="form-group">
+            <label class="login-font">Password</label>
+            <input type="password" class="form-control" name="password" maxlength="20" value="<? @$pass; ?>" required >
+          </div>
+          
+          
+          <div class="form-group">
+            <label class="login-font">Confirm Password 
+			<?
+			if(isset($_REQUEST['rperr'])) {
+				echo '&bull; <span class="err">Password does not match!</span>';
+			} ?></label>
+            <input type="password" id="cpass" class="form-control" name="cpassword" maxlength="20" value="<? @$cpass; ?>" required>
+          </div>
+          
+		  <input type="checkbox" name="terms" /> <label> I agree to the <a target="_blank" class="login-link" href="<? echo $siteurl; ?>/terms-condition">Terms & Conditions </a> </label>
+		           
+          <div class="form-group text-center mt30">
+             <input type="submit" class="btn bc3 btn-login" name="signup" value="Register" onClick="return reg_valid();">
+          </div>
+		  
+		  <div class="form-group">
+            <small class="pull-right">Already have an account? <a href="#" class="login-link" data-toggle="modal" data-target="#login" data-dismiss="modal" aria-label="Close">Login Here</a></small><br>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--HEAD-->
+<div class="container-fluid header">
+ <div class="container">
+     <div class="col-md-2 col-sm-6 col-xs-12 row-fluid">
+       <i class="fa fa-map-marker" aria-hidden="true"></i>
+       <select class="herader-drop" onchange="location=this.options[this.selectedIndex].value;">
+			

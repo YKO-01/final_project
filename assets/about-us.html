@@ -1,0 +1,792 @@
+<html lang="en"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Property Listing">
+    <meta name="description" content="Property Listing">
+    <meta name="keywords" content="property,listing">
+	<title>AZUSA</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/slider.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="assets/css/sweetalert.css">
+	<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,300italic,400italic,300">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <link rel="icon" href="http://thavasu.com/demo/property-listing/index.ico">
+	<script type="text/javascript" src="http://thavasu.com/demo/property-listing/assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="http://thavasu.com/demo/property-listing/assets/js/bootstrap.js"></script>
+	<script src="https://js.stripe.com/v2/" type="text/javascript"></script>
+    <script src="http://thavasu.com/demo/property-listing/assets/js/sweetalert.min.js"></script>
+	<script src="http://thavasu.com/demo/property-listing/assets/js/jquery.validate.min.js"></script>
+	<script src="http://thavasu.com/demo/property-listing/assets/js/image-prv.js"></script>
+	
+     <!--<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />	-->
+     <script src="http://www.jqueryscript.net/demo/Clean-Responsive-jQuery-Carousel-Plugin-flexisel/js/jquery.flexisel.js"></script>
+     
+	 <style>
+	p, a, label, input, textarea, .form-control, body, .btn, button { font-size:14px; }
+	.profile-brdr-2 input.form-control,
+	.profile-brdr-2 select.form-control{
+		height:45px;
+	}
+</style>
+  
+    
+
+<script>
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+
+
+</script>
+<script>
+$(window).load(function() {
+   
+
+    $("#flexiselDemo3").flexisel({
+        visibleItems: 3,
+        animationSpeed: 1000,
+        autoPlay: true,
+        autoPlaySpeed: 3000,            
+        pauseOnHover: true,
+        enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+            portrait: { 
+                changePoint:480,
+                visibleItems: 1
+            }, 
+            landscape: { 
+                changePoint:640,
+                visibleItems: 2
+            },
+            tablet: { 
+                changePoint:768,
+                visibleItems: 3
+            }
+        }
+    });
+
+   
+    
+});
+</script>
+<link rel="stylesheet" href="http://thavasu.com/demo/property-listing/slick.css">
+<link rel="stylesheet" href="http://thavasu.com/demo/property-listing/slick-theme.css">
+<script src="slick.js"> </script>
+<script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow:3,
+        slidesToScroll: 3
+      });
+     
+});
+  </script>
+<style>
+.pdr7{ padding-right:7px} 
+   
+.slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+
+.overlay {   color:#fff;  position:absolute;  z-index:12;  left:0;  width:100%;  text-align:center;}
+.carousel-indicators .active {    width: 22px;    height: 22px;    margin: 0; margin-left:15px; background-color: #5BB531;    border-color: #5BB531;}
+.carousel-indicators li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+	margin-left:15px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #FFF;
+    border: 1px solid #fff;
+    border-radius: 10px; 
+}
+
+a.add-prop
+{background: #fda744;
+color: #FFF !important;
+padding: 3px 10px;
+border-radius: 3px;}
+
+a.add-prop:hover
+{background: #fda744;
+}
+</style>
+</head>
+
+<body>
+<!-- Modal -->
+<div class="modal fade" id="contact-agent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="padding-top: 250px;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #21728d; text-align:center;">
+        <button type="button" style="color:#FFF;" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 style="color:#FFF; font-weight:bold;" class="modal-title" id="exampleModalLabel">Send Message<div id="recname"></div></h4>
+      </div>
+      <div class="modal-body">
+        <form id="cnt_form" name="cont_agent" action="http://thavasu.com/demo/property-listing/contact" method="post" novalidate="novalidate">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Name:</label>
+            <input type="text" class="form-control" name="name" required="" aria-required="true">
+          </div>
+		  <div class="form-group"><label for="recipient-name" class="control-label">Email:</label>
+				  <input type="text" class="form-control" name="email" required="" aria-required="true"></div>		  <div class="form-group">
+            <label for="recipient-name" class="control-label">Mobile Number:</label>
+            <input type="text" class="form-control" name="mobile" maxlength="15" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" minlength="10" required="" aria-required="true">
+          </div>
+		   <div class="form-group">
+            <label for="message-text" class="control-label">Subject:</label>
+            <textarea style="resize:vertical;" class="form-control" name="sub" required="" aria-required="true"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea style="resize:vertical;" class="form-control" name="message" required="" aria-required="true"></textarea>
+          </div>
+      </form></div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-search" name="cont_agent" value="Send Message">
+      </div>
+	  
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header avd-serbg">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="http://thavasu.com/demo/property-listing/assets/images/close-icon.png"></span></button>
+                    <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF;" id="myModalLabel">Login</h4>
+                  </div>
+      <div class="modal-body">
+        <form id="lform" action="http://thavasu.com/demo/property-listing/session" method="post" novalidate="novalidate"> 
+		          <div class="form-group">
+            <label class="login-font">Email Address</label>
+            <input type="email" class="form-control" name="email" value="" required="" aria-required="true">
+          </div>
+          
+           <div class="form-group">
+            <label class="login-font">Password</label>
+            <input type="password" class="form-control" name="pass" maxlength="20" required="" aria-required="true">
+          </div>
+		  
+		  <div class="form-group text-center mt30">
+             <input type="submit" class="btn bc3 btn-login" name="login" value="Log In">
+          </div>
+		  
+          <div class="form-group">
+            <small class="pull-left">
+              <a href="#" class="login-link" data-toggle="modal" data-target="#forgetpass" data-dismiss="modal" aria-label="Close">Forgot Password?</a>
+            </small>
+            <small class="pull-right">
+              Don't Have an Account? <a href="#" class="login-link" data-toggle="modal" data-target="#register" data-dismiss="modal" aria-label="Close">Register Now</a>
+            </small>
+          </div><br>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+<div class="modal fade" id="forgetpass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header avd-serbg">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="http://thavasu.com/demo/property-listing/assets/images/close-icon.png"></span></button>
+            <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF;" id="myModalLabel">Get Password</h4>
+            </div>
+      <div class="modal-body">
+        <form action="" method="post">
+			           <div class="form-group">
+            <label class="login-font">Email Address</label>
+            <input type="email" name="frg_mail" required="" class="form-control">
+          </div>
+		  
+		  <div class="form-group text-center">
+             <button style="margin-top:30px;" type="submit" name="forget" class="btn bc3 btn-login">Submit</button>
+          </div>
+		  
+          <div class="form-group text-center mt30">
+            <small class="pull-left">
+              Already have an account? <a href="#" class="login-link" data-toggle="modal" data-target="#login" data-dismiss="modal" aria-label="Close">Login Here</a>
+            </small>
+            <small class="pull-right">
+             Don't Have an Account? <a href="#" class="login-link" data-toggle="modal" data-target="#register" data-dismiss="modal" aria-label="Close">Register Now</a>
+            </small>			
+          </div><br>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header avd-serbg">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="http://thavasu.com/demo/property-listing/assets/images/close-icon.png"></span></button>
+                    <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF;" id="myModalLabel">Register</h4>
+                  </div>
+				 
+      <div class="modal-body">
+        <form name="sform" id="rform" action="http://thavasu.com/demo/property-listing/signup" method="post" novalidate="novalidate">
+          <div class="form-group">
+            <label class="login-font">Full Name</label>
+            <input type="text" class="form-control" name="fullname" value="" required="" aria-required="true">
+          </div>
+          
+          <div class="form-group">
+            <label class="login-font">Email Address 
+						</label>
+            <input type="email" id="email" class="form-control" name="email" value="" onchange="return chkemail()" required="" aria-required="true">
+          </div>
+          
+          <div class="form-group">
+            <label class="login-font">Mobile Number</label>
+            <input type="text" class="form-control" name="mobile" maxlength="15" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" value="" required="" aria-required="true">
+          </div>
+          
+           <div class="form-group">
+            <label class="login-font">Password</label>
+            <input type="password" class="form-control" name="password" maxlength="20" value="" required="" aria-required="true">
+          </div>
+          
+          
+          <div class="form-group">
+            <label class="login-font">Confirm Password 
+			</label>
+            <input type="password" id="cpass" class="form-control" name="cpassword" maxlength="20" value="" required="" aria-required="true">
+          </div>
+          
+		  <input type="checkbox" name="terms"> <label> I agree to the <a target="_blank" class="login-link" href="http://thavasu.com/demo/property-listing/terms-condition">Terms &amp; Conditions </a> </label>
+		           
+          <div class="form-group text-center mt30">
+             <input type="submit" class="btn bc3 btn-login" name="signup" value="Register" onclick="return reg_valid();">
+          </div>
+		  
+		  <div class="form-group">
+            <small class="pull-right">Already have an account? <a href="#" class="login-link" data-toggle="modal" data-target="#login" data-dismiss="modal" aria-label="Close">Login Here</a></small><br>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--HEAD-->
+<div class="container-fluid header">
+ <div class="container">
+     <div class="col-md-2 col-sm-6 col-xs-12 row-fluid">
+       <i class="fa fa-map-marker" aria-hidden="true"></i>
+       <select class="herader-drop" onchange="location=this.options[this.selectedIndex].value;">
+			<option value="http://thavasu.com/demo/property-listing/index.php">Select Your City</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Abu Dhabi">Abu Dhabi</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Achter Den Kraanberg">Achter Den Kraanberg</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Frei Miguelinho">Frei Miguelinho</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Sibenik">Sibenik</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Chittoor">Chittoor</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Hyderabad">Hyderabad</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Tirupati">Tirupati</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Cochin">Cochin</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Ernakulam">Ernakulam</option>       </select>
+     </div>
+    <div class="col-md-2 col-sm-6 col-xs-12 row-fluid" style="font-size:14px;">
+         <i class="fa fa-phone fa-3 phone"></i>808-555-1212    </div><!--col-md-3-->
+    <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-2 text-right row-fluid">
+       <ul class="headlist">
+	        <li><a href="http://thavasu.com/demo/property-listing/post-ad" class="add-prop" style="color:#FFF !important;"><i class="fa fa-plus" aria-hidden="true"></i> Add Property</a></li>
+			<li><a href="" data-toggle="modal" data-target="#login">Login</a></li><li><a href="" data-toggle="modal" data-target="#register">Register</a></li>            
+            <li><a href="http://thavasu.com/demo/property-listing/about-us">About Us</a></li> 
+            <li><a href="http://thavasu.com/demo/property-listing/contact-us">Contact</a></li> 
+                   </ul>       
+    </div><!--col-md-4-->
+  
+ </div><!--container-->
+</div><!--container-fluid-->
+<!--END HEAD-->
+<script>
+function chkemail() {
+var x = document.getElementById("email").value;
+  $.ajax({url: "http://thavasu.com/demo/property-listing/checkmail.php",
+        type: 'POST',
+        data: {reg_email:x} ,
+		success: function(result){
+		 if(result==1)
+		{
+			swal("Oops!","Email Id already Exists ","error");
+			document.getElementById("email").value="";
+			document.getElementById("email").focus();
+			return false;
+		} if(result==0){
+			return true;
+		} 		
+    }});
+}
+
+function reg_valid() {
+	var fullname = document.sform.fullname.value;
+	var email = document.sform.email.value;
+	var mobile = document.sform.mobile.value;
+	var password = document.sform.password.value;
+	var cpassword = document.sform.cpassword.value;
+	var terms = document.sform.terms;
+	
+	if(fullname!="" && email!="" && mobile!="" && password!="" && cpassword!="") {
+		if(password!=cpassword){
+			swal("Oops!","Confirm password does not match","error");
+			document.getElementById("cpass").value="";
+			return false;
+		}	
+		if(!terms.checked){
+			swal("Oops!","Before SignUp Agree the Terms & Conditions","error");		
+			return false;
+		}
+	}
+}
+</script>
+
+<!--LOGO-->
+
+ <div class="container">
+  <div class="col-md-5">
+      <!--<a href="/"><img src="/assets/images/logo.png" class="img-responsive" /></a>-->
+	  <a href="http://thavasu.com/demo/property-listing/"><img src="http://thavasu.com/demo/property-listing/admin/uploads/general_setting/logo.jpg" class="img-responsive"></a>
+  </div> <!--col-md-12-->
+  
+  
+ <!-- <div class="col-md-5">
+     <div id="carousel-example-generic-ad" class="carousel slide" data-ride="carousel">
+       
+          <div class="carousel-inner mt5 mb5" role="listbox">
+			          </div>
+		    
+        </div>
+     
+  </div> -->  <!--col-md-12-->
+ </div><!--container-->
+
+<!--END LOGO-->
+<style>
+ul.my_nav_bl{
+	display: block;
+}
+</style>
+
+<!--MAIN MENU-->
+
+<nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left my_nav_bl">
+            <li class="menu-li-list-2"><a href="http://thavasu.com/demo/property-listing/">Home</a></li>
+			<li class="menu-li-list"><a href="http://thavasu.com/demo/property-listing/property-list.php?cat=market">Market Place</a></li><li class="menu-li-list"><a href="http://thavasu.com/demo/property-listing/property-list.php?cat=bspace">Hawaii</a></li><li class="menu-li-list"><a href="http://thavasu.com/demo/property-listing/property-list.php?cat=bforsale">Rent</a></li><li class="menu-li-list"><a href="http://thavasu.com/demo/property-listing/property-list.php?cat=commercial">Commercial</a></li><li class="menu-li-list"><a href="http://thavasu.com/demo/property-listing/property-list.php?cat=land">Land</a></li><li class="menu-li-list"><a href="http://thavasu.com/demo/property-listing/property-list.php?cat=villa">Home</a></li>			<li class="menu-li-list"><a href="http://thavasu.com/demo/property-listing/agent-list">Agents</a></li>
+            <!--<li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/new-projects.php">New Projects</a></li>-->
+			<li class="nav-item">
+				<a class="nav-link" href="news.php">News</a>
+			</li> 
+              
+              
+            <!-- <li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/post-ad">Post Ad</a></li>
+             <li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/category/residential">Residential</a></li>
+              <li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/category/commercial">Commercial</a></li>
+              <li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/category/industrial">Industrial</a></li>
+              <li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/category/bspace">Business Space</a></li>
+              <li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/category/overseas">Overseas</a></li>
+              <li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/category/bforsale">Business For Sale</a></li>
+              <li class="menu-li-list"><a  href="http://thavasu.com/demo/property-listing/category/market">Marketplace</a></li>-->
+
+          </ul>
+          
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+<!---------------------------------------------END MAIN MENU-------------------------------------------------------->
+<div class="container">
+    <div class="col-md-12 col-sm-12 col-xs-12  market-place-head-bg mt20">
+        <span class="blackhead pdl10">About Us</span>
+    </div><!--col-md-12 col-sm-12 col-xs-12  market-place-head-bg mt20-->
+    
+	<div class="clearfix"></div>
+	
+    <div class="row">
+	
+         <div class="col-md-12 col-sm-12 col-xs-12 mt20">
+             <div class="col-md-12 col-sm-12 col-xs-12 profile-brdr-2">
+                 <div class="pdt10">
+                 
+                 </div><!--class="pdt10"-->					
+					
+					<div class="text-center blackhead" style="font-size:20px; font-weight:bold;">ABOUT US</div>
+					
+					<div class="text-center customer-review-font mt10">
+					    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, kumar</p>					</div>
+					
+					
+					<div class="text-center mt15 blackhead" style="font-size:18px; font-weight:bold;">
+					The Best Place For Searching Property, And Get Property Done.
+					</div>
+					
+					
+					<div class="col-sm-6 mt20 text-center">
+					   <img src="assets/images/mission.png">
+					   
+					   <div class="text-center mt15 blackhead" style="font-size:18px; font-weight:bold; border-top:2px solid#4fb948">
+					     OUR MISSION 
+					   </div>
+					   
+					   <div class="text-center customer-review-font mt10">
+					    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.kumar</p>					</div>
+					</div>
+					
+					
+					<div class="col-sm-6 mt20 text-center">
+					   <img src="assets/images/vission.png">
+					   
+					   <div class="text-center mt15 blackhead" style="font-size:18px; font-weight:bold; border-top:2px solid#4fb948">
+					     OUR VISION
+					   </div>
+					   <div class="text-center customer-review-font mt10">
+					    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. kumar</p>					</div>
+					</div>
+							
+                 
+             </div><!--col-md-12 col-sm-12 col-xs-12 profile-brdr-->
+         </div><!--col-md-9 col-sm-12 col-xs-12-->
+    </div><!--row-->
+</div> <!--container-->
+
+<div class="container-fluid footerbox mt20">
+ <div class="container mt20">
+  <div class="row col-md-12">
+
+       
+     <div class="col-md-3 col-sm-6 col-xs-12 pdb20">
+          <p class="footerboxheader">Property Category</p>
+		<p><a href="property-list.php?cat=market" class="footerboxlink">Market Place</a></p><p><a href="property-list.php?cat=bspace" class="footerboxlink">Hawaii</a></p><p><a href="property-list.php?cat=bforsale" class="footerboxlink">Rent</a></p><p><a href="property-list.php?cat=commercial" class="footerboxlink">Commercial</a></p><p><a href="property-list.php?cat=land" class="footerboxlink">Land</a></p><p><a href="property-list.php?cat=villa" class="footerboxlink">Home</a></p>      
+    </div><!--col-md-3-->
+  
+
+    <div class="col-md-3 col-sm-6 col-xs-12 pdb20">
+        <p class="footerboxheader">Listing by Location</p>
+		<p class="mt20"><a href="property-list?srchloc=Tirupati" class="footerboxlink">Tirupati</a></p><p><a href="property-list?srchloc=Siruseri" class="footerboxlink">Siruseri</a></p><p><a href="property-list?srchloc=Sholinghur" class="footerboxlink">Sholinghur</a></p><p><a href="property-list?srchloc=Pondicherry" class="footerboxlink">Pondicherry</a></p><p><a href="property-list?srchloc=Ooty" class="footerboxlink">Ooty</a></p><p><a href="property-list?srchloc=Mylapore" class="footerboxlink">Mylapore</a></p><p><a href="property-list?srchloc=Makawao" class="footerboxlink">Makawao</a></p>         
+    </div><!--col-md-3-->
+    
+    <div class="col-md-3 col-sm-6 col-xs-12 pdb20">
+          <p class="footerboxheader">Featured Properties</p>
+		  <p class="mt20"><a href="http://thavasu.com/demo/property-listing/listing/K3gO2813/space-world" class="footerboxlink">Space World</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/kafl3452/ana-avant-grande" class="footerboxlink">Ana Avant Grande</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/b8E45991/p&amp;k-gem-field" class="footerboxlink">P&amp;K Gem Field</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/Hfqx1268/emerald-city" class="footerboxlink">Emerald City</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/gWQ67276/shantiniketan-vega" class="footerboxlink">Shantiniketan Vega</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/d5lM2153/rams-ragahasree-villas" class="footerboxlink">Rams Ragahasree Villas</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/P0LF9048/arihant-arshiya" class="footerboxlink">Arihant Arshiya</a></p>    </div><!--col-md-3-->
+  <style>/*.mt20 p{color:#FFF;}*/</style>  
+    
+    <div class="col-md-3 col-sm-6 col-xs-12 pdb20">
+          <p class="footerboxheader">News Letter</p>
+          <!--<p class="mt20" style="color:#FFF;"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. &nbsp;</p></p>-->
+		  <form class="" action="">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Name">
+			</div>
+			<div class="form-group">
+				<input type="email" class="form-control" placeholder="Email">
+			</div>
+			<div class="form-group">
+				<input type="submit" class="btn btn-info btn-block" value="Submit">
+			</div>
+		  </form>
+          <p class="footerboxheader">Social Connect</p>
+          <div class=" center-block pdb25">           
+			                <a href="/admin" target="_blank"><i id="social-fb" class="social fb"></i><img src="http://thavasu.com/demo/property-listing/assets/images/social icon 1.png"></a>
+	            <a href="/" target="_blank"><i id="social-tw" class="social tw"></i><img src="http://thavasu.com/demo/property-listing/assets/images/social icon 2.png"></a>
+	            <a href="/" target="_blank"><i id="social-gp" class="social gg"></i><img src="http://thavasu.com/demo/property-listing/assets/images/social icon 3.png"></a>
+	            <a href="/en/" target="_blank"><i id="social-em" class="social skype"></i><img src="http://thavasu.com/demo/property-listing/assets/images/social icon 4.png"></a>
+          </div>
+          
+    </div><!--col-md-3-->
+    
+    
+  </div><!--row col-md-12-->
+ </div><!--container-->
+</div><!--container-fluid footerbox-->
+<!--End Footer Box-->
+
+
+<!--Footer-->
+<div class="container-fluid footer">
+<div class="container">
+  <div class="row col-md-12">
+    
+      <div class="col-md-6 col-xs-12 col-sm-12 text-left">
+     Copyright © 2019  All rights reserved.      </div><!--col-md-6-->
+      <div class="col-md-4 col-xs-12 col-sm-12 col-md-offset-2 text-right">
+       <div class="col-md-6 col-md-offset-2 col-sm-12 col-xs-12">
+         <a href="http://thavasu.com/demo/property-listing/terms-condition" class="footerlink">Terms and Conditions</a>
+       </div><!--col-md-3-->
+       <div class="col-md-4 col-sm-12 col-xs-12">
+          <a href="http://thavasu.com/demo/property-listing/privacy-policy" class="footerlink">Privacy Policy</a>
+       </div><!--col-md-3-->
+      </div><!--col-md-6-->
+    
+  </div><!--row-->
+</div><!--container-->
+</div><!--container-fluid-->
+<!--End Footer-->
+
+ <script>
+	 $('[rel="popover"]').popover({
+        container: 'body',
+        html: true,
+        content: function () {
+            var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+            return clone;
+        }
+    }).click(function(e) {
+        e.preventDefault();
+    });
+	</script>
+	
+	
+	<script type="application/javascript">
+		$(".pop").popover({ trigger: "manual" , html: true, animation:false})
+    .on("mouseenter", function () {
+        var _this = this;
+        $(this).popover("show");
+        $(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
+        });
+    }).on("mouseleave", function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!$(".popover:hover").length) {
+                $(_this).popover("hide");
+            }
+        }, 300);
+});
+
+    </script>
+
+     	
+	
+
+
+
+<script>
+$(document).ready(function () {
+
+    $('#p_ad').validate({
+        rules: {
+            mobile: {
+                required: true
+            },
+			title: {
+                required: true
+            },
+			loc: {
+                required: true
+            },
+			address: {
+                required: true
+            },
+			eprice: {
+                required: true
+            },
+			bprice: {
+                required: true
+            },
+			descrip: {
+                required: true
+            },
+			carea: {
+                required: true
+            },
+			parea: {
+                required: true
+            },
+			cperson: {
+                required: true
+            },
+			cno: {
+                required: true
+            },
+			tcall: {
+                required: true
+            }
+        }
+    });
+
+});</script>
+
+<script>
+$(document).ready(function () {
+
+    $('#maform').validate({
+        rules: {
+            fullname: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+			mobile: {
+                required: true,
+				minlength: 10
+            },
+			website: {
+				url: true
+            }
+        }
+    });
+
+});</script>
+
+<script>
+$(document).ready(function () {
+
+    $('#cnt_form').validate({
+        rules: {
+            name: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+			mobile: {
+                required: true
+            },
+			sub: {
+				required: true
+            },
+			message: {
+				required: true
+            }
+        }
+    });
+
+});</script>
+
+<script>
+$(document).ready(function () {
+
+    $('#rform').validate({
+        rules: {
+            fullname: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+			mobile: {
+                required: true,
+				minlength: 10
+            },
+			password: {
+                required: true,
+				minlength: 6
+            },
+			cpassword: {
+				required: true,
+				minlength: 6
+            }
+        }
+    });
+
+});</script>
+
+<script>
+$(document).ready(function () {
+
+    $('#lform').validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+			password: {
+                required: true
+            }
+        }
+    });
+
+});</script>
+
+<script>
+$(document).ready(function () {
+
+    $('#cpform').validate({
+        rules: {
+            cpass: {
+                required: true
+            },
+            npass: {
+                required: true
+            },
+			rpass: {
+                required: true
+            }
+        }
+    });
+
+});</script>
+
+<script>
+$(document).ready(function () {
+
+    $('#updsoc').validate({
+        rules: {
+            fb: {
+                required: true,
+				url: true
+            },
+            twt: {
+                required: true,
+				url: true
+            }
+        }
+    });
+
+});</script>
+
+	
+
+<iframe name="stripeXDM_default860324_provider" id="stripeXDM_default860324_provider" aria-hidden="true" src="https://js.stripe.com/v2/channel.html?stripe_xdm_e=http%3A%2F%2Fthavasu.com&amp;stripe_xdm_c=default860324&amp;stripe_xdm_p=1#__stripe_transport__" frameborder="0" style="position: absolute; top: -2000px; left: 0px;" __idm_frm__="128"></iframe><iframe src="https://js.stripe.com/v2/m/outer.html#referrer=&amp;title=AZUSA&amp;url=http%3A%2F%2Fthavasu.com%2Fdemo%2Fproperty-listing%2Fabout-us.php&amp;muid=232e8c4c-23f2-4227-88b0-d020ae80775896ef56&amp;sid=NA&amp;version=6&amp;preview=false&amp;" frameborder="0" allowtransparency="true" scrolling="no" tabindex="-1" aria-hidden="true" style="width: 1px !important; height: 1px !important; position: fixed !important; visibility: hidden !important; pointer-events: none !important;"></iframe></body></html>

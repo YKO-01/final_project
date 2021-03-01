@@ -1,0 +1,975 @@
+<html lang="zxx"><head>
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>AZUSA</title>
+    <!-- External CSS libraries -->
+    <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-submenu.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../../../../css/leaflet.css" type="text/css">
+    <link rel="stylesheet" href="../../../../css/map.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../../fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="../../../../fonts/linearicons/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="../../../../css/slick.css">
+    <link rel="stylesheet" href="../../../../css/all.min.css">
+    <link rel="stylesheet" href="../../../../font/flaticon.css">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../../../../css/style.css">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="../../../../css/skins/default.css">
+<!--swal js-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <!--end swal-->
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="http://thavasu.com/demo/property-listing/index.ico" type="image/x-icon">
+
+    <!-- Google fonts -->
+    <link rel="stylesheet" type="text/css" href="http://thavasu.com/demo/property-listing/https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" type="text/css" href="http://thavasu.com/demo/property-listing/css/ie10-viewport-bug-workaround.css">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script  src="js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script  src="js/html5shiv.min.js"></script>
+    <script  src="js/respond.min.js"></script>
+    <![endif]-->
+		<script>
+function login_val()
+{
+$(window).on('load', function() {
+	 setTimeout(function(){
+	   $('#login').modal('show');
+   });
+   
+});
+}
+</script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/1/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/44/1/util.js"></script></head>
+
+
+<body>
+<!--<div class="page_loader"></div>-->
+<!-- Top header start -->
+<header class="top-header top-header-bg d-none d-xl-block d-lg-block d-md-block" id="top-header-2" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-7">
+                <div class="list-inline">
+                    <i class="fa fa-map-marker" aria-hidden="true" style="color:#FFF;"></i>
+       <select style="-webkit-appearance: none;
+    width: 160px;
+    padding: 0 10px;" class="herader-drop tp_hdr" onchange="location=this.options[this.selectedIndex].value;">
+			<option value="http://thavasu.com/demo/property-listing/index.php">اختر مدينتك</option><option value="property-listing/listing/Beni-Mellal/Beni-Mellal.html"="benimellal">Beni Mellal</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Achter Den Kraanberg">casa</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Frei Miguelinho">Frei Miguelinho</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Sibenik">Sibenik</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Chittoor">Chittoor</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Hyderabad">Hyderabad</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Tirupati">Tirupati</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Cochin">Cochin</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Ernakulam">Ernakulam</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Pondicherry">Pondicherry</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Alandur">Alandur</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Arimalam">Arimalam</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Ashok Nagar">Ashok Nagar</option><option value="http://thavasu.com/demo/property-listing/property-list?srchloc=Chengalpattu">Chengalpattu</option>       </select>
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#!"><i class="fa fa-phone"></i>212-695-192031+                                                                                                                                                                                                                                                         </a>
+                </div>
+            </div>
+			            <div class="col-lg-6 col-md-4 col-sm-5">
+                <ul class="top-social-media pull-right">
+				
+                   <li><a href="" data-toggle="modal" data-target="#login">تسجيل الدخول</a></li><li><a href="" data-toggle="modal" data-target="#register">تسجيل</a></li>                     
+                    <li>
+                        <a href="about-us.html" class="linkedin">مساعدة</a>
+                    </li>
+					<li>
+                        <a href="http://thavasu.com/demo/property-listing/contact-us.php" class="linkedin">اتصال</a>
+                    </li>
+					                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Top header end -->
+
+<!-- Main header start -->
+<header class="main-header" >
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand logo" href="http://thavasu.com/demo/property-listing/index.php">
+                <img src="http://thavasu.com/demo/property-listing/admin/uploads/general_setting/logo.jpg" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="http://thavasu.com/demo/property-listing/post-ad.php">الصفحة الرئيسية</a>
+                    </li>
+            <li class="nav-item"><a class="nav-link" href="http://thavasu.com/demo/property-listing/property-list.php?cat=market">الاراضي</a></li><li class="nav-item"><a class="nav-link" href="http://thavasu.com/demo/property-listing/property-list.php?cat=bspace">المحالات التجارية</a></li><li class="nav-item"><a class="nav-link" href="http://thavasu.com/demo/property-listing/property-list.php?cat=bforsale">الشقق السكنية</a></li><li class="nav-item"><a class="nav-link" href="http://thavasu.com/demo/property-listing/property-list.php?cat=commercial">الايجار</a><!--</li><li class="nav-item"><a class="nav-link" href="http://thavasu.com/demo/property-listing/property-list.php?cat=land">Land</a></li><li class="nav-item"><a class="nav-link" href="http://thavasu.com/demo/property-listing/property-list.php?cat=villa">Home</a></li>
+					
+					<li class="nav-item">
+                        <a class="nav-link" href="http://thavasu.com/demo/property-listing/agent-list.php">Agents</a>
+                    </li> 
+					 <li class="nav-item">
+                        <a class="nav-link" href="new-projects.php">New Project</a>
+                    </li> 
+					<li class="nav-item">
+                        <a class="nav-link" href="http://thavasu.com/demo/property-listing/news.php">News</a>
+                    </li> 
+					
+					                     <li class="nav-item submit_property">
+                        <a href="http://thavasu.com/demo/property-listing/post-ad.php" data-toggle="modal" data-target="#login" class="nav-link link-color"><i class="fa fa-plus"></i> الصفحة الرئيسية</a>
+                    </li>-->
+					                 </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- Main header end -->
+
+
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header avd-serbg">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="http://thavasu.com/demo/property-listing/assets/images/close-icon.png"></span></button>
+                      <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF;    width: 100%;" id="myModalLabel">تسجيل الدخول</h4>
+                    </div>
+        <div class="modal-body">
+          <form id="lform" action="http://thavasu.com/demo/property-listing/session" method="post"> 
+                    <div class="form-group">
+              <label class="login-font">البريد الالكتروني</label>
+              <input type="email" class="form-control" name="email" value="" required="">
+            </div>
+            
+             <div class="form-group">
+              <label class="login-font">كلمة السر</label>
+              <input type="password" class="form-control" name="pass" maxlength="20" required="">
+            </div>
+            
+            <div class="form-group text-center mt30">
+               <input type="submit" class="btn bc3 btn-login" name="login" value="تسجيل الدخول">
+            </div>
+            <div style="text-align: center;"><a href="" onclick="window.open('http:/''/2daybiz.com/products/2daybizusers/add.php?pro=property-listing', 'windowname1', 'scrollbars,resizable,width=480, height=250'); return false;"><span style="color:black;"><b>انقر هنا للحصول على رابط عرض المستخدم</b> </span></a> </div><br>
+            
+            <div class="form-group">
+              <small class="pull-left" style="float: right;">
+                <a href="#" class="login-link" data-toggle="modal" data-target="#forgetpass" data-dismiss="modal" aria-label="Close">هل نسيت كلمة السر؟</a>
+              </small>
+              <small class="pull-right">
+                  ليس لديك حساب؟ <a href="#" class="login-link" data-toggle="modal" data-target="#register" data-dismiss="modal" aria-label="Close">سجل الان</a>
+              </small>
+            </div><br>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="modal fade" id="forgetpass" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header avd-serbg">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="http://thavasu.com/demo/property-listing/assets/images/close-icon.png"></span></button>
+              <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF; width:100%;" id="myModalLabel">احصل على كلمة المرور</h4>
+              </div>
+        <div class="modal-body">
+          <form action="" method="post">
+                         <div class="form-group">
+              <label class="login-font">عنوان بريد الكتروني</label>
+              <input type="email" name="frg_mail" required="" class="form-control">
+            </div>
+            
+            <div class="form-group text-center">
+               <button style="margin-top:30px;" type="submit" name="forget" class="btn bc3 btn-login">ارسال</button>
+            </div>
+            
+            <div class="form-group text-center mt30">
+              <small class="pull-left" style="float: right;">
+                  هل لديك حساب ؟ <a href="#" class="login-link" data-toggle="modal" data-target="#login" data-dismiss="modal" aria-label="Close">تسجيل الدخول من هنا</a>
+              </small>
+              <small class="pull-right">
+                  ليس لديك حساب ؟ <a href="#" class="login-link" data-toggle="modal" data-target="#register" data-dismiss="modal" aria-label="Close">سجل الان</a>
+              </small>			
+            </div><br>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header avd-serbg">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"> <img src="http://thavasu.com/demo/property-listing/assets/images/close-icon.png"></span></button>
+                      <h4 class="modal-title mode-tit text-center banner-font-1" style="color:#FFF; width:100%;" id="myModalLabel">تسجيل</h4>
+                    </div>
+                           <div class="modal-body">
+          <form name="sform" id="rform" action="http://thavasu.com/demo/property-listing/signup" method="post">
+            <div class="form-group">
+              <label class="login-font">الاسم الكامل</label>
+              <input type="text" class="form-control" name="fullname" value="" required="">
+            </div>
+            
+            <div class="form-group">
+              <label class="login-font">عنوان بريد الكتروني
+                          </label>
+              <input type="email" id="email" class="form-control" name="email" value="" onchange="return chkemail()" required="">
+            </div>
+            
+            <div class="form-group">
+              <label class="login-font">رقم الهاتف المحمول</label>
+              <input type="text" class="form-control" name="mobile" maxlength="15" onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" value="  " required="">
+            </div>
+            
+             <div class="form-group">
+              <label class="login-font">كلمة المرور</label>
+              <input type="password" class="form-control" name="password" maxlength="20" value="" required="">
+            </div>
+            
+            <div class="form-group">
+              <label class="login-font">تأكيد كلمة المرور
+              </label>
+              <input type="password" id="cpass" class="form-control" name="cpassword" maxlength="20" value="" required="">
+            </div>
+            
+            <input type="checkbox" name="terms" required=""> <label> أوافق على <a target="_blank" class="login-link" href="terms-condition">Terms &amp; الشروط والأحكام </a> </label>
+                     
+            <div class="form-group text-center mt30">
+               <input type="submit" class="btn bc3 btn-login" name="signup" value="تسجيل" onclick="return reg_valid();">
+            </div>
+            
+            <div class="form-group">
+              <small class="pull-right">هل لديك حساب ؟ <a href="#" class="login-link" data-toggle="modal" data-target="#login" data-dismiss="modal" aria-label="Close">تسجيل الدخول من هنا</a></small><br>
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+<script>
+function chkemail() {
+var x = document.getElementById("email").value;
+  $.ajax({url: "http://thavasu.com/demo/property-listing/checkmail.php",
+        type: 'POST',
+        data: {reg_email:x} ,
+		success: function(result){
+		 if(result==1)
+		{
+			swal("Oops!","Email Id already Exists ","error");
+			document.getElementById("email").value="";
+			document.getElementById("email").focus();
+			return false;
+		} if(result==0){
+			return true;
+		} 		
+    }});
+}
+
+function reg_valid() {
+	var mailformat =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var fullname = document.sform.fullname.value;
+	var email = document.sform.email.value;
+	var mobile = document.sform.mobile.value;
+	var password = document.sform.password.value;
+	var cpassword = document.sform.cpassword.value;
+	var terms = document.sform.terms;
+	
+	if(!email.match(mailformat))  {  
+		
+		alert("enter a valid email address eg:abc@xyz.com");  
+		document.getElementById("email").focus();  
+		return false;  
+	}  
+	
+	if(fullname!="" && email!="" && mobile!="" && password!="" && cpassword!="") {
+		if(password!=cpassword){
+			swal("Oops!","Confirm password does not match","error");
+			document.getElementById("cpass").value="";
+			return false;
+		}	
+		if(!terms.checked){
+			swal("Oops!","Before SignUp Agree the Terms & Conditions","error");		
+			return false;
+		}
+	}
+}
+</script>
+ <script type="text/javascript">
+var autocomplete;
+ 
+ function initAutocomplete() {
+	autocomplete = new google.maps.places.Autocomplete(
+		(document.getElementById('autocomplete')),
+		{types: ['(cities)']});
+  }</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsOrfIpDIZyYfD_1zWx-fYeE9KoWAN7Ck&amp;libraries=places&amp;callback=initAutocomplete" async="" defer=""></script><!-- Top header end -->
+ 
+ 
+<div class="properties-details-page content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                
+				
+				 
+				
+				
+				<div id="propertiesDetailsSlider" class="carousel properties-details-sliders slide mb-40">
+                    <div class="heading-properties">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-left">
+                                    <h3>Space World</h3>
+                                    <p><i class="fa fa-map-marker"></i> Chennai</p>
+                                </div>
+                                <div class="p-r">
+                                    <h3>546</h3>
+                                    <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- main slider carousel items -->
+                    <div id="propertiesDetailsSlider" class="carousel properties-details-sliders slide mb-40">
+                          
+                        <!-- main slider carousel items -->
+                        <div class="carousel-inner">
+                            <div class="active item carousel-item" data-slide-number="">
+                                <img src="http://thavasu.com/demo/property-listing/images/prop/prop_6b96.jpg" class="img-fluid" alt="slider-properties">
+                            </div>
+                            
+							
+							<div class="item carousel-item" data-slide-number="">
+                                <img src="http://thavasu.com/demo/property-listing/images/prop/prop_d8cb.jpg" class="img-fluid" alt="slider-properties">
+                            </div>							
+							 
+
+                            <a class="carousel-control left" href="#propertiesDetailsSlider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                            <a class="carousel-control right" href="#propertiesDetailsSlider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- main slider carousel nav controls -->
+                     
+                    <!-- main slider carousel items -->
+                    <!-- Heading properties start -->
+                    <div class="heading-properties">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-left">
+                                    <h3>Space World</h3>
+                                    <p><i class="fa fa-map-marker"></i> Chennai,</p>
+									<p> rent</p>
+                                </div>
+                                <div class="pull-right">
+                                    <h3><span class="text-right">546</span></h3>
+									 <p>commercial</p>
+									<p> 6463</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Heading properties end -->
+                </div>
+                <!-- Property meta start -->
+                <div class="property-meta mb-40">
+                    <ul>
+                        <li>
+                            <i class="flaticon-furniture"></i>
+                            <p>1</p>
+                        </li>
+                        <li>
+                            <i class="flaticon-holidays"></i>
+                            <p>1</p>
+                        </li>
+                        <li>
+                            <i class="flaticon-square"></i>
+                            <p>643</p>
+                        </li>
+                        <li>
+                            <i class="flaticon-vehicle"></i>
+                            <p>1</p>
+                        </li>
+						 
+						<li>
+                            <i class="fa fa-print" aria-hidden="true"></i>
+                            <p><a href="" onclick="window.print();">Print</a></p>
+                        </li>
+						
+						<li>
+                            <p><b>Total Floors</b></p>
+                            <p>1</p>
+                        </li>
+						<li>
+                            <p><b>Plot Area</b></p>
+                            <p>6436</p>
+                        </li>
+                    </ul>
+                </div>
+				  
+
+                <!-- Advanced search start -->
+                <div class="widget-2 advanced-search-2 d-lg-none d-xl-none">
+                    <h3 class="sidebar-title">Advanced Search</h3>
+                    <form name="advsrch" action="http://thavasu.com/demo/property-listing/property-list" method="post">
+					 <div class="form-group">
+                            <input type="text" name="keyword" class="form-control form-ctrl-height selectpicker search-fields" placeholder="Property Title or Address">
+                        </div>
+                        <div class="form-group">
+                            <div class="dropdown bootstrap-select search-fields"><select class="selectpicker search-fields" name="pfor" tabindex="-98">
+                                   <option value="">Property For</option>
+                                   <option value="rent">Rent</option>
+                                   <option value="sale">Sale</option>
+                                   <option value="lease">Lease</option>
+                            </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" title="Property For"><div class="filter-option"><div class="filter-option-inner">Property For</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="dropdown bootstrap-select search-fields"><select class="selectpicker search-fields" name="categ" tabindex="-98">
+                                 <option value="market">Market Place</option><option value="bspace">Hawaii</option><option value="bforsale">Rent</option><option value="commercial">Commercial</option><option value="land">Land</option><option value="villa">Home</option>                            </select><button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="button" title="Market Place"><div class="filter-option"><div class="filter-option-inner">Market Place</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="dropdown bootstrap-select search-fields"><select class="selectpicker search-fields" name="bed" tabindex="-98">
+                                        <option value="">Bedrooms</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">5</option>
+                                             <!--<option value="6">6</option>
+                                             <option value="7">7</option>
+                                             <option value="8">8</option>
+                                             <option value="9">9</option>
+                                             <option value="10">10</option>-->
+                                    </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" title="Bedrooms"><div class="filter-option"><div class="filter-option-inner">Bedrooms</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="dropdown bootstrap-select search-fields"><select class="selectpicker search-fields" name="bath" tabindex="-98">
+                                        <option value="">Bathroom</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <!--<option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>-->
+                                    </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" title="Bathroom"><div class="filter-option"><div class="filter-option-inner">Bathroom</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="form-group">
+                                        <input type="number" name="min" id="min" onkeypress="return isNumber(event)" class="form-control banner-group-brdr selectpicker search-fields" placeholder="Min.Amount">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                   <div class="form-group">
+                                  <input type="number" name="max" id="max" onkeypress="return isNumber(event)" class="form-control banner-group-brdr selectpicker search-fields" placeholder="Max.Amount">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ 
+                    </form>
+                </div>
+                <!-- Advanced search end -->
+               <!-- <label class="col-md-3 col-sm-6 col-xs-12"><img src="http://thavasu.com/demo/property-listing/assets/images/property-detail-page/printer.png" /></label>
+                <label class="col-md-9 col-sm-6 col-xs-12 mt10"><span href="" onclick="window.print();">Print This Page</span></label>-->
+                  
+                <!-- Properties description start -->
+                <div class="properties-description mb-40">
+                    <h3 class="heading-2">
+                        Description
+                    </h3>
+                    <p>Space World is established by the most prominent, Space India Builders. They have a uniquely diverse multi-domain portfolio that covers real estate marketing, property development, and property consultancy services. They have projects extending across several locations, in and around Navi Mumbai. They have grown tremendously over the years successfully executing and marketing a project.</p>
+                </div>
+                <!-- Properties description end -->
+								<div class="clearfix"></div>
+<div class="">
+	<div class="col-sm-12 text-center" style="margin:20px 0">
+		<a href="http://thavasu.com/demo/property-listing/" target="_blank">
+			<img src="http://thavasu.com/demo/property-listing/admin/uploads/google/" style="margin:auto;" class="img-responsive">
+		</a>
+	</div>
+</div>
+<div class="clearfix"></div>
+                
+                <!-- Location start -->
+                <div class="location mb-50">
+                    <div class="map">
+                        <h3 class="heading-2">Property Location</h3>
+                        <iframe class="detail-map-height" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d816.3665571669052!2d-6.359328185780575!3d32.32893015503394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDE5JzQ2LjQiTiA2wrAyMSczMy4wIlc!5e1!3m2!1sfr!2sma!4v1613907098380!5m2!1sfr!2sma&amp;q=Maroc" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+                <!-- Location end -->
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="sidebar-left">
+                    <!-- Advanced search start -->
+                    
+					<div class="team-5 widget pdb0i">
+                        <h3 class="sidebar-title">Contact Agent</h3>
+                        <div class="media">
+							<a href="http://thavasu.com/demo/property-listing/agent-info/CmUn1026/about">
+                                <img src="http://thavasu.com/demo/property-listing/images/user/user_xe1.jpg" alt="avatar">
+                            </a>
+                            <div class="media-body align-self-center">
+                                <h5>
+                                    <a href="http://thavasu.com/demo/property-listing/agent-info/CmUn1026/about">Sakthi</a>
+                                </h5>
+                                <p><i class="flaticon-technology-1"></i><a href="http://thavasu.com/demo/property-listing/agent-info/CmUn1026/about">9876543210</a></p>
+                                <p><i class="flaticon-envelope"></i>inetmsakthi@gmail.com</p>
+                            </div>
+                        </div>
+						
+						<div class="media"> 
+                            <a href="http://thavasu.com/demo/property-listing/agent-info/CmUn1026/about"></a><button class="search-button btn-block"><a href="http://thavasu.com/demo/property-listing/agent-info/CmUn1026/about">Contact Owner</a></button>
+						</div>
+                         
+                    </div>
+					
+					<div class="social-media-box widget clearfix">
+                        <h3 class="sidebar-title">Share in Social Media</h3>
+                        <ul class="social-list">
+                            <li>
+                                <a href="http://www.facebook.com/sharer.php?u=http://thavasu.com/demo/property-listing/listing/K3gO2813/space-world" target="_blank" class="facebook-bg">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/share?url=http://thavasu.com&amp;text=thavasu.com&amp;hashtags=thavasu.com" target="_blank" class="twitter-bg">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/share?url=http://thavasu.com" target="_blank" class="google-bg">
+                                    <i class="fa fa-google"></i>
+                                </a>
+                            </li>
+                            <!--<li>
+                                <a href="" class="linkedin-bg">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="pinterest-bg">
+                                    <i class="fa fa-pinterest"></i>
+                                </a>
+                            </li>-->
+                        </ul>
+                    </div>
+					
+					<div class="sidebar widget advanced-search">
+                        <h3 class="sidebar-title">Advanced Search</h3>
+                        <form name="advsrch" action="http://thavasu.com/demo/property-listing/property-list" method="post">
+                            <div class="form-group">
+                                <input type="text" name="keyword" placeholder="Enter The Location" class="form-control selectpicker search-fields">
+                            </div>
+                            <div class="row">
+							<div class="col-lg-6">
+							<div class="form-group">
+                                <div class="dropdown bootstrap-select search-fields"><select class="selectpicker search-fields" name="pfor" tabindex="-98">
+                                   <option value="">Property For</option>
+                                   <option value="rent">Rent</option>
+                                   <option value="sale">Sale</option>
+                                   <option value="lease">Lease</option>
+                                </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" title="Property For"><div class="filter-option"><div class="filter-option-inner">Property For</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                            </div>
+							</div>
+							<div class="col-lg-6">
+                            <div class="form-group">
+                                <div class="dropdown bootstrap-select search-fields"><select class="selectpicker search-fields" name="categ" tabindex="-98">
+								 <option value="">category</option>
+                                    <option value="market">Market Place</option><option value="bspace">Hawaii</option><option value="bforsale">Rent</option><option value="commercial">Commercial</option><option value="land">Land</option><option value="villa">Home</option>                                </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" title="category"><div class="filter-option"><div class="filter-option-inner">category</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                            </div>
+						</div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                             <div class="dropdown bootstrap-select search-fields"><select class="selectpicker search-fields" name="bed" tabindex="-98">
+                                             <option value="">Bedrooms</option>
+                                             <option value="1">1</option>
+                                             <option value="2">2</option>
+                                             <option value="3">3</option>
+                                             <option value="4">4</option>
+                                             <option value="5">4+</option>
+                                             <!--<option value="6">6</option>
+                                             <option value="7">7</option>
+                                             <option value="8">8</option>
+                                             <option value="9">9</option>
+                                             <option value="10">10</option>-->
+                                        </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" title="Bedrooms"><div class="filter-option"><div class="filter-option-inner">Bedrooms</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="dropdown bootstrap-select search-fields"><select class="selectpicker search-fields" name="bath" tabindex="-98">
+                                            <option value="">Bathroom</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">4+</option>
+                                            <!--<option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>-->
+                                        </select><button type="button" class="btn dropdown-toggle bs-placeholder btn-light" data-toggle="dropdown" role="button" title="Bathroom"><div class="filter-option"><div class="filter-option-inner">Bathroom</div></div>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu " role="combobox"><div class="inner show" role="listbox" aria-expanded="false" tabindex="-1"><ul class="dropdown-menu inner show"></ul></div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                      <div class="form-group">
+                                        <input type="text" name="min" id="min" class="form-control banner-group-brdr selectpicker search-fields" placeholder="Min.Amount">
+                                    </div>  
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <div class="form-group">
+                                  <input type="text" name="max" id="max" class="form-control banner-group-brdr selectpicker search-fields" placeholder="Max.Amount">
+                                    </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-0">
+                                <button type="submit" class="search-button" name="advsrch" onclick="">Search</button>
+                            </div>
+                        </form>
+                     </div>
+					 <div class="sidebar widget advanced-search">
+					 <h3 class="sidebar-title">Sponcered Ad</h3>
+					 <div class="row">
+					 					 
+            <div class="col-md-6 mb15"><a href="http://thavasu.com/demo/property-listing/192.168.1.3/property" target="_blank"><img src="http://thavasu.com/demo/property-listing/admin/uploads/icon/2.jpg" class="img-responsive" style="max-width: 100%;"></a></div>
+             
+            
+										 
+            <div class="col-md-6 mb15"><a href="http://thavasu.com/demo/property-listing/192.168.1.3/property" target="_blank"><img src="http://thavasu.com/demo/property-listing/admin/uploads/icon/3.jpg" class="img-responsive" style="max-width: 100%;"></a></div>
+             
+            
+										 
+            <div class="col-md-6 mb15"><a href="http://thavasu.com/demo/property-listing/192.168.1.3/property" target="_blank"><img src="http://thavasu.com/demo/property-listing/admin/uploads/icon/4.jpg" class="img-responsive" style="max-width: 100%;"></a></div>
+             
+            
+										 
+            <div class="col-md-6 mb15"><a href="http://thavasu.com/demo/property-listing/192.168.1.3/property" target="_blank"><img src="http://thavasu.com/demo/property-listing/admin/uploads/icon/5.jpg" class="img-responsive" style="max-width: 100%;"></a></div>
+             
+            
+					 
+					 </div>
+					 </div>
+                    <!-- Posts by category start --> 
+                </div>
+            </div>
+        </div>
+		
+		
+<div class="clearfix"></div>
+<div class="container">
+	<div class="col-sm-12 text-center" style="margin:20px 0">
+		<a href="http://thavasu.com/demo/property-listing/" target="_blank">
+			<img src="http://thavasu.com/demo/property-listing/admin/uploads/google/" style="margin:auto;" class="img-responsive">
+		</a>
+	</div>
+</div>
+<div class="clearfix"></div>
+		
+        <h3 class="heading-2">Similar Properties</h3>
+        <!-- Similar Properties start -->
+        <div class="row similar-properties">
+            <div class="container-fluid">
+                <div class="slick-slider-area">
+                    <div class="row slick-carousel slick-initialized slick-slider" data-slick="{&quot;slidesToShow&quot;: 4, &quot;responsive&quot;:[{&quot;breakpoint&quot;: 1024,&quot;settings&quot;:{&quot;slidesToShow&quot;: 2}}, {&quot;breakpoint&quot;: 768,&quot;settings&quot;:{&quot;slidesToShow&quot;: 1}}]}"><div class="slick-list draggable" style="padding: 0px;"><div class="slick-track" style="opacity: 1; width: 855px; transform: translate3d(143px, 0px, 0px);"><div class="slick-slide slick-current slick-center" data-slick-index="0" aria-hidden="true" style="width: 285px;"><div><div class="slick-slide-item" style="width: 100%; display: inline-block;">
+                            <div class="property-box">
+                                <div class="property-thumbnail">
+                                    <a href="http://thavasu.com/demo/property-listing/listing/kafl3452/ana-avant-grande" class="property-img" tabindex="-1">
+                                         
+                                        <div class="price-ratings-box">
+                                            <p class="price">
+                                              546                                            </p>
+                                        </div>
+                                        <img class="d-block w-100" src="http://thavasu.com/demo/property-listing/images/prop/prop_107b.jpg" alt="properties">
+                                    </a>
+                                </div>
+                                <div class="detail">
+                                    <h1 class="title">
+                                        <a href="http://thavasu.com/demo/property-listing/listing/kafl3452/ana-avant-grande" tabindex="-1">Ana Avant Grande</a>
+                                    </h1>
+                                    <div class="location">
+                                        <a href="http://thavasu.com/demo/property-listing/listing/kafl3452/ana-avant-grande" tabindex="-1">
+                                            <i class="fa fa-map-marker"></i>Chennai,
+                                        </a>
+                                    </div>
+                                    <ul class="facilities-list clearfix">
+                                        <li>
+                                            <i class="flaticon-furniture"></i> 1                                        </li>
+                                        <li>
+                                            <i class="flaticon-holidays"></i>1                                        </li>
+                                        <li>
+                                            <i class="flaticon-square"></i> 248                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer clearfix">
+                                </div>
+                            </div>
+                        </div></div></div><div class="slick-slide slick-center" data-slick-index="1" aria-hidden="true" style="width: 285px;"><div><div class="slick-slide-item" style="width: 100%; display: inline-block;">
+                            <div class="property-box">
+                                <div class="property-thumbnail">
+                                    <a href="http://thavasu.com/demo/property-listing/listing/onju2066/pooja-diamond-villas" class="property-img" tabindex="-1">
+                                         
+                                        <div class="price-ratings-box">
+                                            <p class="price">
+                                              12000                                            </p>
+                                        </div>
+                                        <img class="d-block w-100" src="http://thavasu.com/demo/property-listing/images/prop/prop_ba68.jpg" alt="properties">
+                                    </a>
+                                </div>
+                                <div class="detail">
+                                    <h1 class="title">
+                                        <a href="http://thavasu.com/demo/property-listing/listing/onju2066/pooja-diamond-villas" tabindex="-1">Pooja Diamond Villas</a>
+                                    </h1>
+                                    <div class="location">
+                                        <a href="http://thavasu.com/demo/property-listing/listing/onju2066/pooja-diamond-villas" tabindex="-1">
+                                            <i class="fa fa-map-marker"></i>Chittoor,
+                                        </a>
+                                    </div>
+                                    <ul class="facilities-list clearfix">
+                                        <li>
+                                            <i class="flaticon-furniture"></i> 1                                        </li>
+                                        <li>
+                                            <i class="flaticon-holidays"></i>1                                        </li>
+                                        <li>
+                                            <i class="flaticon-square"></i> 2000                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer clearfix">
+                                </div>
+                            </div>
+                        </div></div></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" style="width: 285px;"><div><div class="slick-slide-item" style="width: 100%; display: inline-block;">
+                            <div class="property-box">
+                                <div class="property-thumbnail">
+                                    <a href="http://thavasu.com/demo/property-listing/listing/4gcE7327/rustomjee-seasons" class="property-img" tabindex="-1">
+                                         
+                                        <div class="price-ratings-box">
+                                            <p class="price">
+                                              150000                                            </p>
+                                        </div>
+                                        <img class="d-block w-100" src="http://thavasu.com/demo/property-listing/images/prop/prop_f693.jpg" alt="properties">
+                                    </a>
+                                </div>
+                                <div class="detail">
+                                    <h1 class="title">
+                                        <a href="http://thavasu.com/demo/property-listing/listing/4gcE7327/rustomjee-seasons" tabindex="-1">Rustomjee Seasons</a>
+                                    </h1>
+                                    <div class="location">
+                                        <a href="http://thavasu.com/demo/property-listing/listing/4gcE7327/rustomjee-seasons" tabindex="-1">
+                                            <i class="fa fa-map-marker"></i>Arimalam,
+                                        </a>
+                                    </div>
+                                    <ul class="facilities-list clearfix">
+                                        <li>
+                                            <i class="flaticon-furniture"></i> 6                                        </li>
+                                        <li>
+                                            <i class="flaticon-holidays"></i>6                                        </li>
+                                        <li>
+                                            <i class="flaticon-square"></i> 2344                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="footer clearfix">
+                                </div>
+                            </div>
+                        </div></div></div></div></div></div>
+                    <div class="slick-prev slick-arrow-buton">
+                        <i class="fa fa-angle-left"></i>
+                    </div>
+                    <div class="slick-next slick-arrow-buton">
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Similar Properties end -->
+    </div>
+</div>
+      
+<!-- Footer start -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="row">
+            
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-item">
+                    <h4>
+                        Property Category
+                    </h4>
+					<p><a href="property-list.php?cat=market" class="footerboxlink">Market Place</a></p><p><a href="property-list.php?cat=bspace" class="footerboxlink">Hawaii</a></p><p><a href="property-list.php?cat=bforsale" class="footerboxlink">Rent</a></p><p><a href="property-list.php?cat=commercial" class="footerboxlink">Commercial</a></p><p><a href="property-list.php?cat=land" class="footerboxlink">Land</a></p>      
+                     
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                <div class="footer-item clearfix">
+                    <h4>
+                        Listing By Location
+                    </h4>
+                     <p class="mt20"><a href="property-list?srchloc=" class="footerboxlink"></a></p><p><a href="property-list?srchloc=Alandur" class="footerboxlink">Alandur</a></p><p><a href="property-list?srchloc=Arimalam" class="footerboxlink">Arimalam</a></p><p><a href="property-list?srchloc=Ashok Nagar" class="footerboxlink">Ashok Nagar</a></p><p><a href="property-list?srchloc=Chengalpattu" class="footerboxlink">Chengalpattu</a></p>     
+                    
+
+                </div>
+            </div>
+			<div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                <div class="footer-item clearfix">
+                    <h4>
+                        Featured Properties
+                    </h4>
+                     <p class="mt20"><a href="http://thavasu.com/demo/property-listing/listing/K3gO2813/space-world" class="footerboxlink">Space World</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/kafl3452/ana-avant-grande" class="footerboxlink">Ana Avant Grande</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/b8E45991/p&amp;k-gem-field" class="footerboxlink">P&amp;K Gem Field</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/Hfqx1268/emerald-city" class="footerboxlink">Emerald City</a></p><p><a href="http://thavasu.com/demo/property-listing/listing/gWQ67276/shantiniketan-vega" class="footerboxlink">Shantiniketan Vega</a></p>                     
+
+                </div>
+            </div>
+			
+			<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                <div class="footer-item">
+                    <h4>News Letter</h4>
+                  <!--<p class="mt20" style="color:#FFF;"><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. &nbsp;</p></p>-->
+				  <form name="nslet" class="" action="" method="post">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Name" name="name" required="">
+			</div>
+			<div class="form-group">
+				<input type="email" class="form-control" placeholder="Email" name="email" required="">
+			</div>
+			<div class="form-group">
+				<input type="submit" name="nslet" class="btn btn-info btn-block" value="Submit">
+			</div>
+		  </form>
+				    <h4> Social Connect</h4>
+			                    <ul class="social-list clearfix">
+                        <li><a href="/admin" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="/" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="/" class="google"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="/en/" class="linkedin"><i class="fa fa-skype"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+             
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row">
+					<div class="col-sm-6 text-left">
+						<p class="">Copyright © 2019  All rights reserved. </p>
+					</div>
+					<div class="col-sm-6 text-right">
+						<p><a href="http://thavasu.com/demo/property-listing/terms-condition">Terms and Conditions</a>&nbsp;
+						<a href="http://thavasu.com/demo/property-listing/privacy-policy">Privacy Policy</a></p>
+					</div>
+				</div>
+				
+				
+				
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->
+
+<!-- Full Page Search -->
+ 
+<script src="http://thavasu.com/demo/property-listing/maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/jquery-2.2.0.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/popper.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/bootstrap.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/bootstrap-submenu.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/rangeslider.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/jquery.mb.YTPlayer.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/wow.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/bootstrap-select.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/jquery.easing.1.3.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/jquery.scrollUp.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/leaflet.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/leaflet-providers.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/leaflet.markercluster.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/dropzone.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/slick.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/jquery.filterizr.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/jquery.magnific-popup.min.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/jquery.countdown.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/maps.js"></script>
+<script src="http://thavasu.com/demo/property-listing/js/app.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="http://thavasu.com/demo/property-listingjs/ie10-viewport-bug-workaround.js"></script>
+<!-- Custom javascript -->
+<script src="http://thavasu.com/demo/property-listingjs/ie10-viewport-bug-workaround.js"></script>
+ 
+
+
+ 
+<script>
+function budget()
+{
+var min = document.forms["advsrch"]["min"].value;
+var max = document.forms["advsrch"]["max"].value;
+if(min>max)
+    {
+		alert("Minimum Budget Should Not Be greater than Max Budget ");
+		document.getElementById("max").focus();
+		return false;
+	}
+return true;
+}
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}	
+</script>
+<a id="page_scroller" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-chevron-up"></i></a><div class="option-panel option-panel-collased">
+    <h2>Change Color</h2>
+    <div class="color-plate default-plate" data-color="default"></div>
+    <div class="color-plate midnight-blue-plate" data-color="midnight-blue"></div>
+    <div class="color-plate yellow-plate" data-color="yellow"></div>
+    <div class="color-plate blue-plate" data-color="blue"></div>
+    <div class="color-plate green-light-plate" data-color="green-light"></div>
+    <div class="color-plate yellow-light-plate" data-color="yellow-light"></div>
+    <div class="color-plate green-plate" data-color="green"></div>
+    <div class="color-plate green-light-2-plate" data-color="green-light-2"></div>
+    <div class="color-plate red-plate" data-color="red"></div>
+    <div class="color-plate purple-plate" data-color="purple"></div>
+    <div class="color-plate brown-plate" data-color="brown"></div>
+    <div class="color-plate olive-plate" data-color="olive"></div>
+    <div class="setting-button">
+        <i class="fa fa-gear"></i>
+    </div>
+</div></body></html>
